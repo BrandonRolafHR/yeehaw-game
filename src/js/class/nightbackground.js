@@ -2,14 +2,14 @@ import { Actor, Sprite, Vector, Keys, CollisionType, DegreeOfFreedom, SolverStra
 import { Resources } from "../resources.js";
 import { Game } from '../game.js'
 
-export class Background extends Actor {
+export class NightBackground extends Actor {
 
-    background;
+    nightbackground;
 
     onInitialize(engine) {
-        this.background = Resources.Background.toSprite();
+        this.nightbackground = Resources.NightBackground.toSprite();
 
-        this.background.sourceView = {
+        this.nightbackground.sourceView = {
             x: 0,
             y: 0,
             width: engine.drawWidth,
@@ -17,10 +17,10 @@ export class Background extends Actor {
         };
 
         this.anchor = Vector.Zero;
-        this.graphics.use(this.background);
+        this.graphics.use(this.nightbackground);
     }
 
     onPostUpdate(engine, delta) {
-        this.background.sourceView.x += 0.1 * delta;
+        this.nightbackground.sourceView.x += 0.1 * delta;
     }
 }
